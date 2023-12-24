@@ -1,4 +1,4 @@
-import docx ,re,pymorphy3,config
+import docx ,re,pymorphy3, parser.config as config
 from faker import Faker
 from docx.shared import Pt
 import random,datetime,locale
@@ -30,6 +30,7 @@ def masking_param(data,i):
         case 2: return (' '.join(data[0].split(' ')[3:]),"*******************")
         case 3: return (data[0], "номер {} серия {}".format("****","******"))
         case 4: return (data[0],"{}.{}.{}".format("**","**","****"))
+        case _: return (data[0],"****************")
 
 
 def masking(para):
@@ -47,21 +48,23 @@ def masking(para):
 def one_year_timedelta():
     return datetime.timedelta(days=random.randint(-365,365))
 
-def string_date_to_dt(data):
-    return datetime.datetime(*list(map(int, data.split('.')[::-1])))
-
-if __name__ == "__main__":
-    fake = Faker("ru_RU")
-    morph = pymorphy3.MorphAnalyzer()
-    doc = docx.Document(docx = 'test.docx')
+def DOCX(file_path:str):
+    doc = docx.Document(docx = file_path)
     paras = doc.paragraphs
-    style = doc.styles['Normal']
-    font = style.font
-    font.name = 'Times New Roman'
-    font.size = Pt(14)
-    locale.setlocale(locale.LC_TIME,"ru_RU.UTF-8")
-
     for para in paras:
         inline = para.runs
         inline[0].text = masking(para)
-    doc.save('test1.docx') 
+    doc.save('parser/temp/answer.docx') 
+
+
+def masking(para):
+    masking_rules = [config.regeX['fullname'],config.regeX['passport_given'],config.regeX['full_address'],config.regeX['passport'],config.regeX['date']]
+
+    for i in range(len(masking_rules)):
+        data = re.findall(masking_rules[i],para.text)
+        
+        if data:
+            for i in data:
+                inline = para.runs[0]
+                inline.text = inline.text.replace(i,"****************")
+    return para.text

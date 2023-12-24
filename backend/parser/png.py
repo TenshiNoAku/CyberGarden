@@ -8,7 +8,8 @@ import datetime
 from faker import Faker
 import locale
 import random
-
+import parser.config as config
+import re
 
 def SNILS(img: str):
     image = cv2.imread(img)
@@ -23,7 +24,7 @@ def SNILS(img: str):
     cv2.rectangle(out_img,(round(0.3*w),round(0.53*h)),(round(0.7*w),round(h*0.6)),(0,0,0),-1)
     cv2.rectangle(out_img,(round(0.36*w),round(0.23*h)),(round(0.95*w),round(h*0.28)),(0,0,0),-1)
 
-    cv2.imwrite('test.png',out_img)
+    cv2.imwrite('parser/temp/answer.png',out_img)
 
 def AUTO(img:str):
     image = cv2.imread(img)
@@ -34,9 +35,14 @@ def AUTO(img:str):
     cv2.rectangle(out_img,(round(0.6*w),round(0.1*h)),(round(1.5*w),round(h*0.3)),(0,0,0),-1)
     cv2.rectangle(out_img,(round(0.05*w),round(0.1*h)),(round(0.55*w),round(h*0.48)),(0,0,0),-1)
     cv2.rectangle(out_img,(round(0.05*w),round(0.5*h)),(round(0.55*w),round(h*0.6)),(0,0,0),-1)
-    cv2.imwrite('test.png',out_img)
-
-def PNG(img_path:str):
+    cv2.imwrite('parser/temp/answer.png',out_img)
+def find_subarray_index(arr, subarray):
+    sub_len = len(subarray)
+    for i in range(len(arr) - sub_len + 1):
+        if arr[i:i+sub_len] == subarray:
+            return i
+    return -1
+def PNG(img_path:str,b=True):
     image = cv2.imread(img_path)
     a = pytesseract.image_to_data(image,lang="rus",output_type=pytesseract.Output.DICT)
     coord = []
@@ -67,4 +73,5 @@ def PNG(img_path:str):
     for j in masking_coord:
         for i in j:
             cv2.rectangle(out_img,(i[2],i[0]),(i[2]+i[3],i[1]+i[0]),(0,0,0),-1)
-    cv2.imwrite(img_path, out_img) 
+    if b:
+        cv2.imwrite('parser/temp/answer.png', out_img) 
