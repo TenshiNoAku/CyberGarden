@@ -22,7 +22,7 @@ def PDF(path):
         print(path)
         pdf_images[idx].save(path, 'PNG')
         files.append(path)
-        PNG(path)
+        PNG(path,False)
 
     pdf_list_img = []
 
