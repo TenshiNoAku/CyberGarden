@@ -1,0 +1,17 @@
+.rangeBlock {
+    width: 200px;
+    height: 50px;
+    margin: 30px;
+    padding: 10px;
+}
+
+.txt {
+    display: inline-block;
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+.RangeStyles {
+    display: inline-block;
+    margin-top: 6px;
+}

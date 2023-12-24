@@ -1,0 +1,151 @@
+.blockFile {
+    position: relative;
+    display: flex;
+    margin-top: 50px;
+    width: 592px;
+    height: 168px;
+    padding: 0p;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+}
+  
+.fileInput {
+    margin: 5px;
+    width: 60%;
+    height: 40%;
+}
+
+.FileLabel {
+    display: block;
+    padding-top: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 50%;
+    height: 100%;
+    border-top-left-radius: 32px;
+    border-bottom-left-radius: 32px;
+    background: #FF3434;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 63.763px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.btn {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    background: #B4B4B4;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 63.763px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 3px;
+}
+
+.btn2 {
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    border-top-right-radius: 32px;
+    border-bottom-right-radius: 32px;
+    background: #FF3434;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 63.763px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 3px;
+}
+
+.getData {
+    position: absolute;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    justify-content: space-between;
+    background-color: #e5e5e5;
+    border-radius: 10px;
+    height: 180px;
+    width: 950px;
+    top: 350px;
+    right: -250px
+}
+
+.imgLoad1 {
+    height: 80px;
+    width: 64px;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 50px;
+    margin-left: 40px;
+    background-image: url("./Document.png");
+}
+
+.downloadTxt {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    margin: 0px;
+    padding: 0px;
+    font-size: 48px;
+    font-weight: 500;
+    margin-top: 60px;
+}
+
+.imgLoad2 {
+    border-radius: 10px;
+    margin: 0px;
+    padding: 0px;
+    height: 96px;
+    width: 96px;
+    margin-top: 42px;
+    margin-right: 42px;
+    background-image: url("./1.svg");
+}
+
+.show {
+    display: block;
+    color:#FF3434;
+    font-size: 20px;
+    position: absolute;
+    top: 170px;
+    left: 0px;  
+}
+
+.hide {
+    opacity: 0;
+}
+
+.show2 {
+    display: block;
+    color:#FF3434;
+    font-size: 20px;
+    position: absolute;
+    top: 170px;
+    left: 300px;  
+}

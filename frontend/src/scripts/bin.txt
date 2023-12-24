@@ -1,0 +1,9 @@
+<div className="getData">
+                {pdfUrl && <h2 className="getDataInfo">Данные с сервера</h2>}
+                {/* <button onClick={convertToPdf}>Скачать файл</button> */}
+                {pdfUrl && <a href={pdfUrl} download="file" className="load">
+                    <div className="DownloadFile">
+                        Нажмите здесь для скачивания файла
+                    </div>
+                </a>}
+            </div>

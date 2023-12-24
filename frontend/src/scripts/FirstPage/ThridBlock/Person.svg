@@ -1,0 +1,10 @@
+<svg width="94" height="94" viewBox="0 0 94 94" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Person" clip-path="url(#clip0_171_348)">
+<path id="Vector" d="M47 47C59.9837 47 70.5 36.4837 70.5 23.5C70.5 10.5162 59.9837 0 47 0C34.0163 0 23.5 10.5162 23.5 23.5C23.5 36.4837 34.0163 47 47 47ZM47 58.75C31.3137 58.75 0 66.6225 0 82.25V94H94V82.25C94 66.6225 62.6862 58.75 47 58.75Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_171_348">
+<rect width="94" height="94" fill="white"/>
+</clipPath>
+</defs>
+</svg>

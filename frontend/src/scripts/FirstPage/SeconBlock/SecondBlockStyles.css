@@ -1,0 +1,149 @@
+.SecondBlock {
+    position: relative;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0px;
+    width: 100%;
+    height: auto;
+    flex-shrink: 0;
+    background: #090909;
+    padding-top: 297px;
+    padding-right: 326px;
+    padding-bottom: 298px;
+}
+
+.ConstTxt {
+    z-index: 2;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.white {
+    z-index: 2;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.white_red {
+    z-index: 2;
+    display: inline;
+    padding: 0px;
+    margin: 0px;
+    color: #FFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    animation-name: AnimeTxt;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes AnimeTxt {
+    from {
+        font-size: 60px;
+        color: #FFF;
+    } to {
+        color: #FF3434;
+        font-size: 88.966px;
+    }
+}
+
+.txtBlock {
+    z-index: 2;
+    display: block;
+    width: auto;
+    height: 94px;
+    overflow: hidden;
+}
+
+.white {
+    z-index: 2;
+    display: inline-block;
+    width: auto;
+    height: 65px;
+    margin-bottom: 5px;
+    font-family: Montserrat;
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.block {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    animation-name: TxtUp;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes TxtUp {
+    0% {
+        transform: translateY(0px);
+    } 25% {
+        transform: translateY(-65px);
+    } 50% {
+        transform: translateY(-130px);
+    } 75% {
+        transform: translateY(-185px);
+    } 100% {
+        transform: translateY(-275px);
+    }   
+}
+
+.gif {
+    display: block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.SecondPageText2 {
+    display: inline-block;
+    margin-top: 48px;
+    color: rgba(0, 0, 0, 0.50);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 29.536px;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}

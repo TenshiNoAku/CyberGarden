@@ -1,0 +1,68 @@
+.SecondPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.Header2 {
+    display: block;
+    width: 100%;
+    height: 131px;
+    margin: 0px;
+    padding: 0px;
+    background: #fff;
+    backdrop-filter: blur(2px);
+    border: none;
+}
+
+.FilesTxt {
+    display: flex;
+    flex-direction: column;
+    margin-top: 271px;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.types {
+    color: #000;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.formBlock {
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.radioBlock {
+    margin-left: 10px;
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.radioLable {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 26.88px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.SecondPageText2 {
+    display: inline-block;
+    margin-top: 60px;
+}

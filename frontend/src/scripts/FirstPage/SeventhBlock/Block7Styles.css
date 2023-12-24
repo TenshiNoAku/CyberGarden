@@ -1,0 +1,45 @@
+.Block7 {
+    display: flex;
+    justify-content: space-between;
+    background-color: #090909;
+    height: 250px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.p1 {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    color: #ffffff;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 19.6px;
+    font-weight: 600;
+    margin-top: 113px;
+    margin-left: 50px;
+}
+
+.p2 {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    color: #c3c3c3;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-size: 30px;
+    font-weight: 400;
+    margin-top: 40px;
+    gap: 9px;
+}
+
+.p3 {
+    display: inline-block;
+    margin: 0px;
+    padding: 0px;
+    color: #ffffff;
+    font-family: "Montserrat-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    margin-top: 118px;
+    margin-right: 50px;
+}
