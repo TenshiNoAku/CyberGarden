@@ -59,3 +59,10 @@
 	1. ФИО
 	2. серия, номер паспорта, а также дата выдачи
 	3. адрес проживания
+
+# 5.  Docker
+
+1. git clone https://github.com/TenshiNoAku/CyberGarden.git
+2. cd CyberGarden
+3. docker-compose-build
+4. docker run
