@@ -35,15 +35,19 @@ def AUTO(img:str):
     cv2.rectangle(out_img,(round(0.6*w),round(0.1*h)),(round(1.5*w),round(h*0.3)),(0,0,0),-1)
     cv2.rectangle(out_img,(round(0.05*w),round(0.1*h)),(round(0.55*w),round(h*0.48)),(0,0,0),-1)
     cv2.rectangle(out_img,(round(0.05*w),round(0.5*h)),(round(0.55*w),round(h*0.6)),(0,0,0),-1)
+    cv2.rectangle(out_img,(round(0.67*w),round(0.41*h)),(round(1.5*w),round(h*0.45)),(0,0,0),-1)
     cv2.imwrite('parser/temp/answer.png',out_img)
+    
 def find_subarray_index(arr, subarray):
     sub_len = len(subarray)
     for i in range(len(arr) - sub_len + 1):
         if arr[i:i+sub_len] == subarray:
             return i
     return -1
+
 def PNG(img_path:str,b=True):
     image = cv2.imread(img_path)
+
     a = pytesseract.image_to_data(image,lang="rus",output_type=pytesseract.Output.DICT)
     coord = []
     text = []
@@ -57,14 +61,13 @@ def PNG(img_path:str,b=True):
         text[i] = text[i].replace(',',"")
     
     text_string = ' '.join(text)
-   
+    print(text_string)
     masking_coord = []
     out_img = cv2.imread(img_path)
-
+    print(len(config.regeX.values()))
     for i in range(len(config.regeX.values())):
             data = re.findall(list(config.regeX.values())[i],text_string)
             if data:
-                print(data)
                 for matches in data:
                     print(matches)
                     match_arr = matches.split()
@@ -74,4 +77,6 @@ def PNG(img_path:str,b=True):
         for i in j:
             cv2.rectangle(out_img,(i[2],i[0]),(i[2]+i[3],i[1]+i[0]),(0,0,0),-1)
     if b:
-        cv2.imwrite('parser/temp/answer.png', out_img) 
+        cv2.imwrite('parser/temp/answer.png', out_img)
+    else: 
+        cv2.imwrite(img_path,out_img)

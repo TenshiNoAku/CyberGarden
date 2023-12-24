@@ -19,17 +19,15 @@ def PDF(path):
     files = []
     for idx in range(len(pdf_images)):
         path = 'parser/temp/pdf_page_'+ str(idx+1) +'.png'
-        print(path)
         pdf_images[idx].save(path, 'PNG')
         files.append(path)
-        PNG(path,False)
 
     pdf_list_img = []
 
     for png_file_path in files:
         pdf_list_img.append(Image.open(png_file_path).convert('RGB'))
         
-    pdf_list_img[0].save('parser/temp/answer.pdf',save_all=True,append_images=pdf_images)
+    pdf_list_img[0].save('parser/temp/answer.pdf',save_all=True,append_images=pdf_images[1:])
 
     return 'temp/answer.pdf'
     

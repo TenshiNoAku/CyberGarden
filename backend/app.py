@@ -7,7 +7,7 @@ from pydantic import BaseModel
 from parser.docxy import DOCX
 from parser.config import delete_files_in_temp
 from fastapi.responses import FileResponse
-UPLOAD_DIR = './parser/temp'
+UPLOAD_DIR = './parser/temp/'
 print(Path())
 app = FastAPI()
 app.add_middleware(
@@ -43,7 +43,7 @@ async def create_upload_file(file_upload: UploadFile):
 
 @app.post('/upload_file/document')
 async def create_upload_file(file_upload: UploadFile):
-    delete_files_in_temp()
+
     data_type = file_upload.filename.split('.')[1]
     data = await file_upload.read()
     save_to = UPLOAD_DIR + file_upload.filename
@@ -55,8 +55,8 @@ async def create_upload_file(file_upload: UploadFile):
         return FileResponse(path='parser/temp/answer.pdf')
     elif data_type in ['png','jpg','jpeg']:
         PNG(save_to)
-        return FileResponse(path='parser/temp/answer.'+data_type)
+        return FileResponse(path='parser/temp/answer.png')
     elif data_type in ['docx','doc']:
         DOCX(save_to)
-        return FileResponse(path='parser/temp/answer.'+ data_type)
+        return FileResponse(path='parser/temp/answer.docx')
 
